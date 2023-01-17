@@ -1,0 +1,1 @@
+This is a small repo for scripts that I may use to setup some of my devices. You can use them if you want and change them to your liking. 
