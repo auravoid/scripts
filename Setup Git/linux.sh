@@ -22,13 +22,13 @@ if [ ! -f "$GIT_KEY" ]; then
     ssh-keygen -t ed25519 -C "$EMAIL" -f "$HOME/.ssh/git"
     echo ""
     echo "Add the following ssh key to your Github or Gitlab account:"
-    echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/git\n" >> ~/.ssh/config
     cat ~/.ssh/git.pub
+    echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/git\n" >> ~/.ssh/config
 elif [ -f "$GIT_KEY" ]; then
     echo ""
     echo "Looks like you already have a ssh key. Add the following ssh key to your Github or Gitlab account:"
-    echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/git\n" >> ~/.ssh/config
     cat ~/.ssh/git.pub
+    echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/git\n" >> ~/.ssh/config
 fi
 
 echo ""

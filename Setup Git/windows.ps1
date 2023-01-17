@@ -22,14 +22,14 @@ if ( -not (Test-Path $GIT_KEY)) {
     ssh-keygen -t ed25519 -C "$EMAIL" -f "$HOME\.ssh\git"
     Write-Output ""
     Write-Output "Add the following ssh key to your Github or Gitlab account:"
-    Write-Output "Host github.com`n`tHostName github.com`n`tUser git`n`tIdentityFile $HOME/.ssh/git`n" >> $HOME\.ssh\config
     Get-Content $HOME\.ssh\git.pub
+    Write-Output "Host github.com`n`tHostName github.com`n`tUser git`n`tIdentityFile $HOME/.ssh/git`n" >> $HOME\.ssh\config
 }
 else {
     Write-Output ""
     Write-Output "Looks like you already have a ssh key. Add the following ssh key to your Github or Gitlab account:"
-    Write-Output -e "Host github.com`n`tHostName github.com`n`tUser git`n`tIdentityFile $HOME\.ssh\git`n" >> $HOME\.ssh\config
     Get-Content $HOME\.ssh\git.pub
+    Write-Output -e "Host github.com`n`tHostName github.com`n`tUser git`n`tIdentityFile $HOME\.ssh\git`n" >> $HOME\.ssh\config
 }
 
 Write-Output ""
